@@ -1,4 +1,4 @@
-package prateekgupta.entity;
+package org.prateekgupta.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

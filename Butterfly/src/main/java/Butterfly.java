@@ -1,4 +1,4 @@
-import prateekgupta.entity.ButterflyEntity;
+import org.prateekgupta.entity.ButterflyEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -13,5 +13,6 @@ public class Butterfly {
         System.out.println(butterflyEntity);
         session.close();
         factory.close();
+
     }
 }
