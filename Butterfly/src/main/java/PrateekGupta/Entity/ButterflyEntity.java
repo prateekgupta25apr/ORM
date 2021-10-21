@@ -1,4 +1,4 @@
-package PrateekGupta.Entity;
+package prateekgupta.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "butterfly_details")
-public class DTO {
+public class ButterflyEntity {
     @Id
     @Column(name = "id")
     private int id;
