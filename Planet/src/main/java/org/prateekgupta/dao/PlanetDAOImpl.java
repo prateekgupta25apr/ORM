@@ -52,8 +52,9 @@ public class PlanetDAOImpl implements PlanetDAO {
             Transaction transaction = session.beginTransaction();
             Query query = session.createQuery("update PlanetEntity set name = '" +
                     entity.getName() + "' where id=" + entity.getId());
-            session.clear();
+//            session.clear();
             query.executeUpdate();
+            System.out.println(session.get(PlanetEntity.class,1));
 //            transaction.commit();
         } finally {
             if (session != null) {

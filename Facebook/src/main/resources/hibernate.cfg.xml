@@ -10,5 +10,6 @@
         <property name="connection.password">root</property>
         <property name="hbm2ddl.auto">update</property>
         <mapping class="org.prateekgupta.entity.UserEntity"/>
+        <mapping class="org.prateekgupta.entity.LoginEntity"/>
     </session-factory>
 </hibernate-configuration>
