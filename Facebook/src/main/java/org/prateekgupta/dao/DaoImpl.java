@@ -8,6 +8,7 @@ import org.prateekgupta.entity.LoginEntity;
 import org.prateekgupta.entity.UserEntity;
 import org.prateekgupta.utils.HibernateUtils;
 
+
 public class DaoImpl implements Dao {
     @Override
     public String save(UserEntity entity) {
@@ -19,7 +20,8 @@ public class DaoImpl implements Dao {
             Transaction transaction = session.beginTransaction();
             session.save(entity);
             transaction.commit();
-        } finally {
+        }
+        finally {
             if (session != null) {
                 session.close();
             }
@@ -54,9 +56,9 @@ public class DaoImpl implements Dao {
         try {
             factory = HibernateUtils.getFactory();
             session = factory.openSession();
-            Query query=session.createNamedQuery("getById");
+            Query<UserEntity> query=session.createNamedQuery("getById");
             query.setParameter("providedId",id);
-            result =(UserEntity) query.uniqueResult();
+            result =query.uniqueResult();
         } finally {
             if (session != null) {
                 session.close();
