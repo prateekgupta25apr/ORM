@@ -7,4 +7,6 @@ public interface Dao {
     void read(SessionFactory factory);
 
     boolean update(SessionFactory factory,Table1Entity entity);
+
+    boolean delete(SessionFactory factory,Table1Entity entity);
 }

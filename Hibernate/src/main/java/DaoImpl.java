@@ -3,6 +3,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.Arrays;
+
 public class DaoImpl implements Dao{
 
     @Override
@@ -35,6 +37,22 @@ public class DaoImpl implements Dao{
             Query<?> query=session.createNamedQuery("updateName");
             query.setParameter("providedName",entity.getName());
             query.setParameter("providedId",entity.getId());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        }
+        catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean delete(SessionFactory factory, Table1Entity entity) {
+        try(Session session = factory.openSession()) {
+            Transaction transaction= session.beginTransaction();
+            Query<?> query = session.createQuery(
+                    "delete from Table1Entity where id=" + entity.getId());
             query.executeUpdate();
             transaction.commit();
             return true;

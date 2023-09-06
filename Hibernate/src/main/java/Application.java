@@ -60,6 +60,18 @@ public class Application {
                     else
                         System.out.println("Data update failed");
                     break;
+
+                    case 4:
+                    table1=new Table1Entity();
+                    System.out.println("Enter id to be deleted");
+                    table1.setId(scanner.nextInt());
+                    scanner.nextLine();
+
+                    if (dao.delete(factory,table1))
+                        System.out.println("Data deleted successfully");
+                    else
+                        System.out.println("Data delete failed");
+                    break;
             }
 
             System.out.println("Enter Y/y to continue or any other letter to exit");
